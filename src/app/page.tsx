@@ -1,103 +1,58 @@
-import Image from "next/image";
+import styles from './main.module.css'
+import {clsx} from 'clsx';
+import MinecraftSkinViewer from '@/components/MinecraftSkinViewer';
+import {Accordion} from '@/components/Accordion'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <main>
+      <div className={styles.container}>
+        <div className={styles.leftColumn}>
+          <div className={styles.names}>
+            <p className={styles.enName}>Yamada Yugo</p>
+            <p className={styles.jaName}>山田 優吾</p>
+          </div>
+          <div className={styles.skin}>
+            <MinecraftSkinViewer 
+              skinUrl={"megaaak.png"} 
+              width={500} 
+              height={500} 
+              autoRotate={false}
+              model="classic"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <div className={styles.middleColumn}>
+          <div className={styles.middleItems}>
+            <div className={styles.aboutMe}>
+              <h1 className={styles.title}>About Me</h1>
+              <p><span className={styles.highlight}>2005</span>生まれ</p>
+              <p><span className={styles.highlight}>福岡</span>生まれ育ち</p>
+              <p><span className={styles.highlight}>北九州工業高等専門学校<br/>情報システムコース</span>在学中</p>
+              <p className={clsx(styles.highlight,styles.ikigomi)}>バックエンドエンジニアに成るべく日々勉強中</p>
+            </div>
+            <div className={styles.skills}>
+              <h1 className={styles.title}>Skills & Langs</h1>
+              <Accordion title="Go" description="普段からメインで書いています。主にバックエンド開発をするときに用いています。現在はEffective Goを読んだり、標準ライブラリを読んだりしています。"/>
+              <Accordion title="C" description="学校の授業で習いました。基本的な構文は書くことができます。"/>
+              <Accordion title="Python" description="機械学習を用いるために、研究で書いています。"/>
+              <Accordion title="HTML / CSS" description="簡単なフロントエンドであれば書くことができます。"/>
+              <Accordion title="Next.js / React" description="フロントエンドフレームワークとしてよく用いています。SSRやstate管理に関してはまだまだ未熟です。"/>
+              <Accordion title="Terraform" description="触ったことがある程度ですが、プロダクト開発に用いたことがあります。"/>
+              <Accordion title="Docker" description="コンテナを使うときによく用いています。DockerfileやDocker Composeなどを用いて開発しています。"/>
+              <Accordion title="Git / Github" description="開発を行うときはほぼ必ず使用しています。GithubActionsでのCI/CDパイプラインを構築しています。"/>
+
+              <br/>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.rightColumn}>
+          ccc
+        </div>
+
+      </div>
+    </main>
   );
 }
