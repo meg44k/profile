@@ -38,6 +38,7 @@
 }
 
 .lowerTriangle{
+  margin-right: 10px;
   color: var(--foreground);
   transition: transform 0.5s ease;
   

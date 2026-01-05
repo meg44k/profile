@@ -171,16 +171,12 @@
 
 .wrapperGo{
     position: relative;
-    display: inline-block;
 }
 
 .wapperGoAccordion{
     position: relative;
 }
 
-.conquerLeft{
-    grid-column: 1 / 3;
-}
 
 .productCards{
     padding-left: 30px;
