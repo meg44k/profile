@@ -14,7 +14,7 @@ export default function Home() {
           </div>
           <div className={styles.skin}>
             <MinecraftSkinViewer 
-              skinUrl={"/megaaak.png"} 
+              skinUrl={"/Megaaak.png"} 
               width={500} 
               height={500} 
               autoRotate={false}
