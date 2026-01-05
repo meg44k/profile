@@ -2,8 +2,8 @@ import styles from './Accordion.module.css'
 import {useId} from 'react'
 
 export type AccordionProps = {
-    title: String;
-    description: String;
+    title: string;
+    description: string;
 }
 
 export const Accordion = ({
