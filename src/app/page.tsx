@@ -49,9 +49,15 @@ export default function Home() {
         </div>
 
         <div className={styles.rightColumn}>
-          ccc
+          <div className={styles.icons}>
+              <a href="https://github.com/meg44k" target="_blank" rel="noopener noreferrer">
+                <img src="/github-icon-lightmode.svg" alt="The Github icon" />
+              </a>
+              <a href="https://x.com/MegaakDev" target="_blank" rel="noopener noreferrer">
+                <img src="/x-icon-lightmode.svg" alt="The X icon" />
+              </a>
+          </div>
         </div>
-
       </div>
     </main>
   );

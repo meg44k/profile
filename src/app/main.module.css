@@ -91,3 +91,12 @@
     margin-top: 40px;
     border-top: 2px solid var(--foreground);
 }
+
+.icons{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    gap: 20px;
+    padding-top: 5px;
+}
