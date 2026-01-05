@@ -1,7 +1,11 @@
-import styles from './main.module.css'
 import {clsx} from 'clsx';
+
 import MinecraftSkinViewer from '@/components/MinecraftSkinViewer';
 import {Accordion} from '@/components/Accordion'
+import CrownIcon from '../../public/crown.svg'
+
+import styles from './main.module.css'
+
 
 export default function Home() {
   return (
@@ -31,10 +35,16 @@ export default function Home() {
               <p><span className={styles.highlight}>福岡</span>生まれ育ち</p>
               <p><span className={styles.highlight}>北九州工業高等専門学校<br/>情報システムコース</span>在学中</p>
               <p className={clsx(styles.highlight,styles.ikigomi)}><span className={styles.marker}>バックエンドエンジニア</span>に成るべく日々勉強中</p>
+              
             </div>
             <div className={styles.skills}>
               <h1 className={styles.title}>Skills & Langs</h1>
-              <Accordion title="Go" description="普段からメインで書いています！主にバックエンド開発をするときに用いています！現在はEffective Goを読んだり、標準ライブラリを読んだりしています！"/>
+              <div className={styles.wrapperGo}>
+                <CrownIcon className={styles.crown}></CrownIcon>
+                <div className={styles.wrapperGoAccordion}>
+                  <Accordion title="Go" description="普段からメインで書いています！主にバックエンド開発をするときに用いています！現在はEffective Goを読んだり、標準ライブラリを読んだりしています！"/>
+                </div>
+              </div>
               <Accordion title="C" description="学校の授業で習いました。基本的な構文は書くことができます。"/>
               <Accordion title="Python" description="機械学習を用いるために、研究で書いています。"/>
               <Accordion title="HTML / CSS" description="簡単なフロントエンドであれば書くことができます。"/>
