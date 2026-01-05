@@ -3,12 +3,14 @@
 :root {
   --background: #E7E5DE;
   --foreground: #252726;
+  --pointcolor: #a0a0ff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #252726;
     --foreground: #E7E5DE;
+    --pointcolor: #5353cd;
   }
 }
 

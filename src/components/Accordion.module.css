@@ -4,6 +4,7 @@
 
 .title {
     padding-top: 5px;
+    padding-left: 10px;
 
     display: flex;
     justify-content: space-between;
@@ -26,7 +27,8 @@
 
 .description{
     overflow: hidden;
-    font-size: 40px;
+    font-size: 30px;
+    padding-left: 10px;
 }
 
 .accordionToggle:checked ~ .accordionWrapper {
