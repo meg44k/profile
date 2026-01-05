@@ -1,15 +1,17 @@
 'use client'
 
 import {clsx} from 'clsx';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import Image from 'next/image'
+import {useTheme} from "next-themes";
 
 import MinecraftSkinViewer from '@/components/MinecraftSkinViewer';
 import {Accordion} from '@/components/Accordion'
 import { ProductCard } from "@/components/ProductCard";
 import { Scramble } from "@/components/ScrambleText"
+import ThemeToggle from "@/components/ThemeToggle"
 
 import LowerArrow from '../../public/LowerArrow.svg'
 import CrownIcon from '../../public/crown.svg'
@@ -18,7 +20,6 @@ import LeftArrow from '../../public/LeftArrow.svg'
 
 import styles from './main.module.css'
 import 'swiper/css';
-// import 'swiper/css/navigation';
 
 
 
@@ -27,6 +28,12 @@ export default function Home() {
   const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(null);
   const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
   const [isHoverdOnName, setIsHoverdOnName] = useState(false);
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <main className={styles.mainContainer}>
       <div className={styles.contentWrapper}>
@@ -175,12 +182,28 @@ export default function Home() {
       </div>
       <div className={styles.rightColumn}>
         <div className={styles.icons}>
-            <a href="https://github.com/meg44k" target="_blank" rel="noopener noreferrer">
-              <Image src="/github-icon-lightmode.svg" alt="The Github icon" width={50} height={50}/>
+          {mounted ? (<>
+          <a href="https://github.com/meg44k" target="_blank" rel="noopener noreferrer">
+              {resolvedTheme === "dark" ? (
+                <Image src="/github-mark-white.png" alt="xのロゴ" width={50} height={50}/>
+              ) : (
+                <Image src="/github-mark-black.png" alt="xのロゴ" width={50} height={50}/>
+              )}
             </a>
             <a href="https://x.com/MegaakDev" target="_blank" rel="noopener noreferrer">
-              <Image src="/x-icon-lightmode.svg" alt="The X icon" width={50} height={50} />
+              {resolvedTheme === "dark" ? (
+                <Image src="/x-logo-white.png" alt="xのロゴ" width={50} height={50}/>
+              ) : (
+                <Image src="/x-logo-black.png" alt="xのロゴ" width={50} height={50}/>
+              )}
             </a>
+            </>) 
+          : (<></>)
+          }
+            
+            <div className={styles.themeToggle}>
+              <ThemeToggle/>
+            </div>
         </div>
       </div>
     </main>

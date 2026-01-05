@@ -6,12 +6,10 @@
   --pointcolor: #a0a0ff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #252726;
-    --foreground: #E7E5DE;
-    --pointcolor: #5353cd;
-  }
+.dark{
+  --background: #252726;
+  --foreground: #E7E5DE;
+  --pointcolor: #5353cd;
 }
 
 body {
