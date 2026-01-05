@@ -80,7 +80,7 @@ export default function Home() {
                   <LowerArrow className={`${styles.lowerArrow2} ${hasArrowMoved ? styles.moved : ''}`} onMouseEnter={() => setHasArrowMoved(true)}></LowerArrow>
                   <LowerArrow className={`${styles.lowerArrow3} ${hasArrowMoved ? styles.moved : ''}`} onMouseEnter={() => setHasArrowMoved(true)}></LowerArrow>
                 </div>
-                <p className={clsx(styles.highlight,styles.ikigomi)}><span className={styles.marker}>バックエンドエンジニア</span><br/>に成るべく日々勉強中</p>
+                <p className={clsx(styles.highlight,styles.ikigomi)}><span className={styles.marker}>つよつよエンジニア</span>に<br/>成るべく日々勉強中</p>
 
               </div>
               <div className={styles.skills}>
