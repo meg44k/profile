@@ -3,7 +3,8 @@
 import {clsx} from 'clsx';
 import {useState} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
+import Image from 'next/image'
 
 import MinecraftSkinViewer from '@/components/MinecraftSkinViewer';
 import {Accordion} from '@/components/Accordion'
@@ -47,14 +48,14 @@ export default function Home() {
           <div className={styles.middleColumn}>
             <div className={styles.middleItems}>
               <div className={styles.aboutMe}>
-                <h1 className={styles.title}>About Me</h1>
+                <h1 className={clsx(styles.title,styles.aboutMeTitle)}>About Me</h1>
                 <p><span className={styles.highlight}>2005</span>生まれ</p>
                 <p><span className={styles.highlight}>福岡</span>生まれ育ち</p>
                 <div className={styles.wrapperDeg}>
                   <p><span className={styles.highlight}>北九州工業高等専門学校<br/>情報システムコース</span>在学中</p>
                   <LowerArrow className={`${styles.lowerArrow} ${hasArrowMoved ? styles.moved : ''}`} onMouseEnter={() => setHasArrowMoved(true)}></LowerArrow>
                 </div>
-                <p className={clsx(styles.highlight,styles.ikigomi)}><span className={styles.marker}>バックエンドエンジニア</span>に成るべく日々勉強中</p>
+                <p className={clsx(styles.highlight,styles.ikigomi)}><span className={styles.marker}>バックエンドエンジニア</span><br/>に成るべく日々勉強中</p>
 
               </div>
               <div className={styles.skills}>
@@ -96,7 +97,7 @@ export default function Home() {
                   detailUrl='https://topaz.dev/projects/25d00c5fb3c16d590d84'
                   description='味方と完全ランダムマッチング！会話、チャット禁止の完全読み合い将棋です。もし味方と同じ駒を選ぶと、手が合成されます！'
                   githubUrl='https://github.com/shii-park/2vs2shogi'
-                  imagePath='2vs2shogi.png'
+                  imagePath='/2vs2shogi.png'
                 />
               </SwiperSlide>
               <SwiperSlide>
@@ -105,7 +106,7 @@ export default function Home() {
                   detailUrl='https://topaz.dev/projects/25d00c5fb3c16d590d84'
                   description='味方と完全ランダムマッチング！会話、チャット禁止の完全読み合い将棋です。もし味方と同じ駒を選ぶと、手が合成されます！'
                   githubUrl='https://github.com/shii-park/2vs2shogi'
-                  imagePath='2vs2shogi.png'
+                  imagePath='/2vs2shogi.png'
                 />
               </SwiperSlide>
               <SwiperSlide>
@@ -114,7 +115,7 @@ export default function Home() {
                   detailUrl='https://topaz.dev/projects/25d00c5fb3c16d590d84'
                   description='味方と完全ランダムマッチング！会話、チャット禁止の完全読み合い将棋です。もし味方と同じ駒を選ぶと、手が合成されます！'
                   githubUrl='https://github.com/shii-park/2vs2shogi'
-                  imagePath='2vs2shogi.png'
+                  imagePath='/2vs2shogi.png'
                 />
               </SwiperSlide>
               <SwiperSlide>
@@ -123,7 +124,7 @@ export default function Home() {
                   detailUrl='https://topaz.dev/projects/25d00c5fb3c16d590d84'
                   description='味方と完全ランダムマッチング！会話、チャット禁止の完全読み合い将棋です。もし味方と同じ駒を選ぶと、手が合成されます！'
                   githubUrl='https://github.com/shii-park/2vs2shogi'
-                  imagePath='2vs2shogi.png'
+                  imagePath='/2vs2shogi.png'
                 />
               </SwiperSlide>
               <SwiperSlide>
@@ -132,7 +133,7 @@ export default function Home() {
                   detailUrl='https://topaz.dev/projects/25d00c5fb3c16d590d84'
                   description='味方と完全ランダムマッチング！会話、チャット禁止の完全読み合い将棋です。もし味方と同じ駒を選ぶと、手が合成されます！'
                   githubUrl='https://github.com/shii-park/2vs2shogi'
-                  imagePath='2vs2shogi.png'
+                  imagePath='/2vs2shogi.png'
                 />
               </SwiperSlide>
               <SwiperSlide>
@@ -141,7 +142,7 @@ export default function Home() {
                   detailUrl='https://topaz.dev/projects/25d00c5fb3c16d590d84'
                   description='味方と完全ランダムマッチング！会話、チャット禁止の完全読み合い将棋です。もし味方と同じ駒を選ぶと、手が合成されます！'
                   githubUrl='https://github.com/shii-park/2vs2shogi'
-                  imagePath='2vs2shogi.png'
+                  imagePath='/2vs2shogi.png'
                 />
               </SwiperSlide>
            </Swiper>
@@ -157,10 +158,10 @@ export default function Home() {
       <div className={styles.rightColumn}>
         <div className={styles.icons}>
             <a href="https://github.com/meg44k" target="_blank" rel="noopener noreferrer">
-              <img src="/github-icon-lightmode.svg" alt="The Github icon" />
+              <Image src="/github-icon-lightmode.svg" alt="The Github icon" width={50} height={50}/>
             </a>
             <a href="https://x.com/MegaakDev" target="_blank" rel="noopener noreferrer">
-              <img src="/x-icon-lightmode.svg" alt="The X icon" />
+              <Image src="/x-icon-lightmode.svg" alt="The X icon" width={50} height={50} />
             </a>
         </div>
       </div>
