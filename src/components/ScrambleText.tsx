@@ -29,7 +29,7 @@ export const Scramble = ({
     if (intervalRef.current) clearInterval(intervalRef.current);
 
     intervalRef.current = setInterval(() => {
-      setText(prev => 
+      setText(() => 
         targetText
           .split("")
           .map((letter, index) => {

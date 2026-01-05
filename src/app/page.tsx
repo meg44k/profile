@@ -36,7 +36,7 @@ export default function Home() {
               <div className={styles.enName}>
                 <Scramble
                   initialText = "Yamada Yugo"
-                  hoverText = "Megaak"
+                  hoverText = "    Megaak"
                   type = "en"
                   active={isHoverdOnName}
                 />
