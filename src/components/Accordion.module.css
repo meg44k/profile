@@ -8,13 +8,15 @@
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 60px;
     font-weight:bold;
     line-height: 1.2;
-
+    
     border-bottom: 2px dashed var(--foreground);
 
     cursor: pointer;
+    user-select: none;
 
     list-style: none;
 }
@@ -33,4 +35,15 @@
 
 .accordionToggle:checked ~ .accordionWrapper {
   grid-template-rows: 1fr;
+}
+
+.lowerTriangle{
+  color: var(--foreground);
+  transition: transform 0.5s ease;
+  
+}
+
+.accordionToggle:checked + .title .lowerTriangle{
+  transform: rotate(180deg);
+
 }

@@ -1,5 +1,6 @@
 import styles from './Accordion.module.css'
 import {useId} from 'react'
+import Arrow from '../../public/LowerTriangle.svg'
 
 export type AccordionProps = {
     title: string;
@@ -16,6 +17,7 @@ export const Accordion = ({
             <input type="checkbox" id={uuid} className={styles.accordionToggle}></input>
             <label htmlFor={uuid} className={styles.title}>
                 {title}
+                <Arrow className={styles.lowerTriangle}></Arrow>
             </label>
             <div className={styles.accordionWrapper}>
                 <p className={styles.description}>
