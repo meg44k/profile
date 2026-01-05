@@ -9,6 +9,7 @@ import Image from 'next/image'
 import MinecraftSkinViewer from '@/components/MinecraftSkinViewer';
 import {Accordion} from '@/components/Accordion'
 import { ProductCard } from "@/components/ProductCard";
+import { Scramble } from "@/components/ScrambleText"
 
 import LowerArrow from '../../public/LowerArrow.svg'
 import CrownIcon from '../../public/crown.svg'
@@ -25,14 +26,29 @@ export default function Home() {
   const [hasArrowMoved, setHasArrowMoved] = useState(false); // 右下の矢印を一度だけ動かす
   const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(null);
   const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
+  const [isHoverdOnName, setIsHoverdOnName] = useState(false);
   return (
     <main className={styles.mainContainer}>
       <div className={styles.contentWrapper}>
         <div className={styles.profileSection}>
           <div className={styles.leftColumn}>
-            <div className={styles.names}>
-              <p className={styles.enName}>Yamada Yugo</p>
-              <p className={styles.jaName}>山田 優吾</p>
+            <div className={styles.names} onMouseEnter={() => setIsHoverdOnName(true)} onMouseLeave={() => setIsHoverdOnName(false)}>
+              <div className={styles.enName}>
+                <Scramble
+                  initialText = "Yamada Yugo"
+                  hoverText = "Megaak"
+                  type = "en"
+                  active={isHoverdOnName}
+                />
+              </div>
+              <div className={styles.jaName}>
+                <Scramble
+                  initialText = "山田 優吾"
+                  hoverText = "めがあく"
+                  type = "ja"
+                  active={isHoverdOnName}
+                />
+              </div>
             </div>
             <div className={styles.skin}>
               <MinecraftSkinViewer 
