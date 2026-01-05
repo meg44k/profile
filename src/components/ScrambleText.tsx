@@ -1,6 +1,5 @@
 "use client"
 import {useState, useEffect, useRef} from 'react'
-import styles from "./ScrambleText.module.css"
 
 const CHARS = {
     en: "abcdefghijklnopqrstuvxyz",
