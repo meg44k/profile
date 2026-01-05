@@ -53,7 +53,9 @@ export default function Home() {
                 <p><span className={styles.highlight}>福岡</span>生まれ育ち</p>
                 <div className={styles.wrapperDeg}>
                   <p><span className={styles.highlight}>北九州工業高等専門学校<br/>情報システムコース</span>在学中</p>
-                  <LowerArrow className={`${styles.lowerArrow} ${hasArrowMoved ? styles.moved : ''}`} onMouseEnter={() => setHasArrowMoved(true)}></LowerArrow>
+                  <LowerArrow className={`${styles.lowerArrow1} ${hasArrowMoved ? styles.moved : ''}`} onMouseEnter={() => setHasArrowMoved(true)}></LowerArrow>
+                  <LowerArrow className={`${styles.lowerArrow2} ${hasArrowMoved ? styles.moved : ''}`} onMouseEnter={() => setHasArrowMoved(true)}></LowerArrow>
+                  <LowerArrow className={`${styles.lowerArrow3} ${hasArrowMoved ? styles.moved : ''}`} onMouseEnter={() => setHasArrowMoved(true)}></LowerArrow>
                 </div>
                 <p className={clsx(styles.highlight,styles.ikigomi)}><span className={styles.marker}>バックエンドエンジニア</span><br/>に成るべく日々勉強中</p>
 

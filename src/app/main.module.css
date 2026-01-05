@@ -114,11 +114,29 @@
 .wrapperDeg{
     position: relative;
 }
-.lowerArrow{
+.lowerArrow1{
     position: absolute;
     color: var(--foreground);
     right: 50px;
     bottom: 20px;
+
+    transition: transform 1s ease;
+}
+
+.lowerArrow2{
+    position: absolute;
+    color: var(--foreground);
+    right: 50px;
+    bottom:-100px;
+
+    transition: transform 1s ease;
+}
+
+.lowerArrow3{
+    position: absolute;
+    color: var(--foreground);
+    right: 50px;
+    bottom: -220px;
 
     transition: transform 1s ease;
 }
