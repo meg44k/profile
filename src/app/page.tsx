@@ -2,20 +2,28 @@
 
 import {clsx} from 'clsx';
 import {useState} from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
 
 import MinecraftSkinViewer from '@/components/MinecraftSkinViewer';
 import {Accordion} from '@/components/Accordion'
+import { ProductCard } from "@/components/ProductCard";
 
 import LowerArrow from '../../public/LowerArrow.svg'
 import CrownIcon from '../../public/crown.svg'
+import RightArrow from '../../public/RightArrow.svg'
+import LeftArrow from '../../public/LeftArrow.svg'
 
 import styles from './main.module.css'
-
+import 'swiper/css';
+// import 'swiper/css/navigation';
 
 
 
 export default function Home() {
   const [hasArrowMoved, setHasArrowMoved] = useState(false); // 右下の矢印を一度だけ動かす
+  const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(null);
+  const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
   return (
     <main className={styles.mainContainer}>
       <div className={styles.contentWrapper}>
@@ -70,7 +78,80 @@ export default function Home() {
         </div>
         <div className={styles.productsSection}>
           <h1 className={styles.title}>Products</h1>
-          
+          <div className={styles.productCards}>
+            <Swiper
+              modules={[Navigation]} // ナビゲーション（矢印）機能を使う
+              spaceBetween={0}      // カード間の隙間（px）
+              slidesPerView={3.5}      // 一度に表示する枚数
+              loop={true}            // ★これで無限ループになります
+              navigation={{
+                nextEl: nextEl,
+                prevEl: prevEl,
+              }}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <ProductCard 
+                  title="2vs2将棋"
+                  detailUrl='https://topaz.dev/projects/25d00c5fb3c16d590d84'
+                  description='味方と完全ランダムマッチング！会話、チャット禁止の完全読み合い将棋です。もし味方と同じ駒を選ぶと、手が合成されます！'
+                  githubUrl='https://github.com/shii-park/2vs2shogi'
+                  imagePath='2vs2shogi.png'
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProductCard 
+                  title="2vs2将棋"
+                  detailUrl='https://topaz.dev/projects/25d00c5fb3c16d590d84'
+                  description='味方と完全ランダムマッチング！会話、チャット禁止の完全読み合い将棋です。もし味方と同じ駒を選ぶと、手が合成されます！'
+                  githubUrl='https://github.com/shii-park/2vs2shogi'
+                  imagePath='2vs2shogi.png'
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProductCard 
+                  title="2vs2将棋"
+                  detailUrl='https://topaz.dev/projects/25d00c5fb3c16d590d84'
+                  description='味方と完全ランダムマッチング！会話、チャット禁止の完全読み合い将棋です。もし味方と同じ駒を選ぶと、手が合成されます！'
+                  githubUrl='https://github.com/shii-park/2vs2shogi'
+                  imagePath='2vs2shogi.png'
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProductCard 
+                  title="2vs2将棋"
+                  detailUrl='https://topaz.dev/projects/25d00c5fb3c16d590d84'
+                  description='味方と完全ランダムマッチング！会話、チャット禁止の完全読み合い将棋です。もし味方と同じ駒を選ぶと、手が合成されます！'
+                  githubUrl='https://github.com/shii-park/2vs2shogi'
+                  imagePath='2vs2shogi.png'
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProductCard 
+                  title="2vs2将棋"
+                  detailUrl='https://topaz.dev/projects/25d00c5fb3c16d590d84'
+                  description='味方と完全ランダムマッチング！会話、チャット禁止の完全読み合い将棋です。もし味方と同じ駒を選ぶと、手が合成されます！'
+                  githubUrl='https://github.com/shii-park/2vs2shogi'
+                  imagePath='2vs2shogi.png'
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ProductCard 
+                  title="2vs2将棋"
+                  detailUrl='https://topaz.dev/projects/25d00c5fb3c16d590d84'
+                  description='味方と完全ランダムマッチング！会話、チャット禁止の完全読み合い将棋です。もし味方と同じ駒を選ぶと、手が合成されます！'
+                  githubUrl='https://github.com/shii-park/2vs2shogi'
+                  imagePath='2vs2shogi.png'
+                />
+              </SwiperSlide>
+           </Swiper>
+           <button type="button" ref={(node) => setPrevEl(node)} className={`custom-prev-button ${styles.leftArrow}`} >
+              <LeftArrow />
+           </button>
+           <button type="button" ref={(node) => setNextEl(node)} className={`custom-next-button ${styles.rightArrow}`} >
+              <RightArrow />
+           </button>
+          </div>
         </div>
       </div>
       <div className={styles.rightColumn}>

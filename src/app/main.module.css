@@ -177,3 +177,31 @@
 .conquerLeft{
     grid-column: 1 / 3;
 }
+
+.productCards{
+    padding-left: 30px;
+    position: relative;
+}
+
+.productCards::-webkit-scrollbar {
+    display: none; 
+}
+
+.leftArrow{
+    left: 0;
+}
+.rightArrow{
+    right:0;
+}
+
+.rightArrow, .leftArrow{
+    color:var(--pointcolor);
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.rightArrow:hover, .leftArrow:hover{
+    transform: scale(1.2);
+}
