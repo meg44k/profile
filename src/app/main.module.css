@@ -82,11 +82,28 @@
     font-size: 30px;
 
     border-top: 2px solid var(--foreground);
+
 }
 
 
 .ikigomi{
     margin-top: 50px;
+}
+
+.wrapperDeg{
+    position: relative;
+}
+.lowerArrow{
+    position: absolute;
+    color: var(--foreground);
+    right: 50px;
+    bottom: 20px;
+
+    transition: transform 1s ease;
+}
+
+.moved{
+    transform: translateY(50px);
 }
 
 .skin{
@@ -137,4 +154,8 @@
 
 .wapperGoAccordion{
     position: relative;
+}
+
+.conquerLeft{
+    grid-column: 1 / 3;
 }
