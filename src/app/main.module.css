@@ -283,7 +283,7 @@
         z-index: 1;
         position: static;
         top: 0;
-        height: auto;
+        height: 100svh;
 
         border-right: 2px solid var(--foreground);
     }
