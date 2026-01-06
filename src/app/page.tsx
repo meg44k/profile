@@ -12,6 +12,7 @@ import {Accordion} from '@/components/Accordion'
 import { ProductCard } from "@/components/ProductCard";
 import { Scramble } from "@/components/ScrambleText"
 import ThemeToggle from "@/components/ThemeToggle"
+import { GithubIcon, XIcon } from '@/components/Icons';
 
 import LowerArrow from '../../public/LowerArrow.svg'
 import CrownIcon from '../../public/crown.svg'
@@ -207,18 +208,10 @@ export default function Home() {
         <div className={styles.icons}>
           {mounted ? (<>
           <a href="https://github.com/meg44k" target="_blank" rel="noopener noreferrer">
-              {resolvedTheme === "dark" ? (
-                <Image src="/github-mark-white.png" alt="xのロゴ" width={50} height={50}/>
-              ) : (
-                <Image src="/github-mark-black.png" alt="xのロゴ" width={50} height={50}/>
-              )}
+              <GithubIcon/>
             </a>
             <a href="https://x.com/MegaakDev" target="_blank" rel="noopener noreferrer">
-              {resolvedTheme === "dark" ? (
-                <Image src="/x-logo-white.png" alt="xのロゴ" width={50} height={50}/>
-              ) : (
-                <Image src="/x-logo-black.png" alt="xのロゴ" width={50} height={50}/>
-              )}
+              <XIcon/>
             </a>
             </>) 
           : (<></>)
