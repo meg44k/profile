@@ -4,8 +4,6 @@ import {clsx} from 'clsx';
 import {useState, useEffect} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import Image from 'next/image'
-import {useTheme} from "next-themes";
 
 import MinecraftSkinViewer from '@/components/MinecraftSkinViewer';
 import {Accordion} from '@/components/Accordion'
@@ -29,7 +27,6 @@ export default function Home() {
   const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(null);
   const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
   const [isHoverdOnName, setIsHoverdOnName] = useState(false);
-  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
