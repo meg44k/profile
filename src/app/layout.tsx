@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ポートフォリオ",
+  title: "やまだゆうごのポートフォリオ",
   description: "Yamada Yugoのポートフォリオです",
 };
 
