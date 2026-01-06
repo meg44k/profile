@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 60px;
+    font-size: var(--skillTitleSize);
     font-weight:bold;
     line-height: 1.2;
     
@@ -29,7 +29,7 @@
 
 .description{
     overflow: hidden;
-    font-size: 30px;
+    font-size: var(--normalSize);
     padding-left: 10px;
 }
 
@@ -47,4 +47,31 @@
 .accordionToggle:checked + .title .lowerTriangle{
   transform: rotate(180deg);
 
+}
+
+@media (max-width: 768px) {
+  .title {
+    padding-top: 5px;
+    padding-left: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight:bold;
+    line-height: 1.2;
+    
+    border-bottom: 2px dashed var(--foreground);
+
+    cursor: pointer;
+    user-select: none;
+
+    list-style: none;
+}
+
+.description{
+    overflow: hidden;
+    font-size: 1.5rem;
+    padding-left: 10px;
+}
 }

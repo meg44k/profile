@@ -4,7 +4,13 @@
   --background: #E7E5DE;
   --foreground: #252726;
   --pointcolor: #a0a0ff;
+  --highlightSize: 4rem;
+  --titleSize: 6rem;
+  --normalSize: 2rem;
+  --nameSize: 9.5rem;
+  --skillTitleSize: 4rem;
 }
+
 
 .dark{
   --background: #252726;

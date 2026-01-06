@@ -30,9 +30,13 @@ export default function Home() {
   const [isHoverdOnName, setIsHoverdOnName] = useState(false);
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  
+
 
   return (
     <main className={styles.mainContainer}>
@@ -60,7 +64,7 @@ export default function Home() {
             <div className={styles.skin}>
               <MinecraftSkinViewer 
                 skinUrl={"/Megaaak.png"} 
-                width={500} 
+                width={200} 
                 height={500} 
                 autoRotate={false}
                 model="classic"
@@ -107,13 +111,32 @@ export default function Home() {
           <div className={styles.productCards}>
             <Swiper
               modules={[Navigation]} // ナビゲーション（矢印）機能を使う
-              spaceBetween={0}      // カード間の隙間（px）
-              slidesPerView={3.5}      // 一度に表示する枚数
               loop={true}            // ★これで無限ループになります
+              centeredSlides={true}
               navigation={{
                 nextEl: nextEl,
                 prevEl: prevEl,
               }}
+              breakpoints={{
+                  // 画面幅が0pxから768pxまでの場合
+                  0: {
+                    slidesPerView: 1,
+                    spaceBetween: 20, // 必要であれば、スマホでのスペースも調整できます
+                  },
+                  // 画面幅が769px以上の場合
+                 700: {
+                     slidesPerView: 2,
+                     spaceBetween: 0, // 必要であれば、PCでのスペースも調整できます
+                    },
+                  1150: {
+                     slidesPerView: 1,
+                     spaceBetween: 0, // 必要であれば、PCでのスペースも調整できます
+                    },
+                  1600: {
+                    slidesPerView: 3,
+                    spaceBetween: 0, // 必要であれば、PCでのスペースも調整できます
+                  },
+               }}
               className="mySwiper"
             >
               <SwiperSlide>

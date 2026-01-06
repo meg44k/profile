@@ -23,7 +23,7 @@
 }
 
 .productsSection {
-    padding: 40px;
+    /* padding: 40px; */
     padding-left: 10px;
 }
 
@@ -69,26 +69,26 @@
 }
 
 .enName{
-    font-size: 150px;
+    font-size: var(--nameSize);
     font-weight: bold;
     margin: 0;
     line-height: 1;
 }
 
 .jaName{
-    font-size: 150px;
+    font-size: var(--nameSize);
     font-weight: bold;
     line-height: 1;
     margin: 0;
 }
 
 .highlight{
-    font-size: 60px;
+    font-size: var(--highlightSize);
     font-weight:bold;
 }
 
 .title{
-    font-size: 100px;
+    font-size: var(--titleSize);
     font-weight: 900;
 }
 
@@ -97,7 +97,7 @@
     margin-top: 500px;
     margin-bottom: 300px;
     line-height: 1.2;
-    font-size: 30px;
+    font-size: var(--normalSize);
 
     border-top: 2px solid var(--foreground);
 
@@ -222,4 +222,227 @@
 
 .rightArrow:hover, .leftArrow:hover{
     transform: scale(1.2);
+}
+
+
+
+
+
+@media (max-width: 768px){
+    .mainContainer {
+        display: grid;
+        grid-template-columns: 1fr 60px; 
+        height: 100vh;
+        overflow: visible;
+    }
+
+    .contentWrapper {
+        overflow-y: auto;
+        height: 100vh;
+        scrollbar-width: none;
+    }
+
+    .contentWrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .profileSection{
+        width: 100%;
+        display: block;
+        position: relative;
+        border-bottom: 2px solid var(--foreground);
+    }
+
+
+    .leftColumn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        position: static;
+        top: 0;
+        height: auto;
+
+        border-right: 2px solid var(--foreground);
+    }
+
+    .names{
+        padding-right: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+
+        gap: 10px;
+
+        border-bottom: 2px solid var(--foreground);
+    }
+
+    .middleColumn {
+        z-index: 10;
+        margin-left: -30px;
+        padding-left: 30px;
+    }
+
+    .middleColumn::-webkit-scrollbar {
+        display: none; /* Webkit (Chrome, Safari, Edge) */
+    }
+
+    .rightColumn {
+        border-left: 2px solid var(--foreground);
+        z-index: 10;
+        height: 100%;
+    }
+
+    .enName{
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin: 0;
+        line-height: 1;
+    }
+
+    .jaName{
+        font-size: 2.5rem;
+        font-weight: bold;
+        line-height: 1;
+        margin: 0;
+    }
+
+    .highlight{
+        font-size: 2rem;
+        font-weight:bold;
+    }
+
+    .title{
+        font-size: 3rem;
+        font-weight: 900;
+    }
+
+    .aboutMe{
+        padding-left: 10px;
+        margin-top: 0px;
+        margin-bottom: 300px;
+        line-height: 1.2;
+        font-size: 1rem;
+        border-top: 0px solid var(--foreground);
+
+    }
+
+    .aboutMeTitle{
+        margin-bottom: 20px;
+    }
+
+    .ikigomi{
+        margin-top: 50px;
+    }
+
+    .wrapperDeg{
+        position: relative;
+    }
+    
+    .lowerArrow1 .lowerArrow2 .lowerArrow3{
+        position: absolute;
+        color: var(--foreground);
+        transition: transform 1s ease;
+    }
+    .lowerArrow1{
+        bottom: 20px;
+        display: none;
+    }
+
+    .lowerArrow2{
+        bottom:-100px;
+        display: none;
+    }
+
+    .lowerArrow3{
+        bottom: -220px;
+        display: none;
+    }
+
+    .moved{
+        transform: translateY(50px);
+    }
+
+    .skin{
+        margin: auto;
+        display: none;
+    }
+
+    .skills{
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 30px;
+        margin-top: 40px;
+        border-top: 2px solid var(--foreground);
+    }
+
+    .icons{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 10px;
+        gap: 20px;
+        padding-top: 5px;
+        height: 100vh;
+    }
+
+    .themeToggle{
+        margin-top: auto;
+        margin-bottom: 50px;
+    }
+
+    .marker{
+        background: linear-gradient(transparent 60%,var(--pointcolor) 60%);
+        display: inline;
+    }
+
+    .crown{
+        color: var(--pointcolor);
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        pointer-events: none;
+        transform: rotate(-30deg);
+        z-index: 50;
+        scale: 60%;
+    }
+
+    .wrapperGo{
+        position: relative;
+    }
+
+    .wapperGoAccordion{
+        position: relative;
+    }
+
+
+    .productCards{
+        padding-left: 30px;
+        position: relative;
+    }
+
+    .productCards::-webkit-scrollbar {
+        display: none; 
+    }
+
+    .leftArrow{
+        left: 0;
+    }
+    .rightArrow{
+        right:0;
+    }
+
+    .rightArrow, .leftArrow{
+        color:var(--pointcolor);
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    .rightArrow:hover, .leftArrow:hover{
+        transform: scale(1.2);
+    }
 }
