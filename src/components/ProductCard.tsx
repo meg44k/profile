@@ -21,6 +21,7 @@ export const ProductCard = ({
 }: ProductCardProps) => {
     return (
         <div className={styles.wrapperCard}>
+            <div className={styles.underCard}></div>
             <h2 className={styles.title}><a href={detailUrl} target="_blank" rel="noopener noreferrer">{title}</a></h2>
             <Image className={styles.thumbnail} src={imagePath} alt={title} width={1000} height={1000}/>
             <div className={styles.githubWrapper}>

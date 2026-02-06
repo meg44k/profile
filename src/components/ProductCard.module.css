@@ -1,9 +1,23 @@
 .wrapperCard{
+    background-color: var(--background);
     height: 700px;
     width: 500px;
-    border: 2px dashed var(--foreground);
+    border: 3px dashed var(--foreground);
     border-radius: 30px;
     padding: 15px 30px 30px;
+    margin-bottom: 30px;
+}
+
+.underCard{
+    z-index: -1;
+    position: absolute;
+    bottom: 10;
+
+    height: 600px;
+    width: 490px;
+    border-radius: 30px;
+    padding: 15px 30px 30px;
+    background-color: var(--pointcolor);
 }
 
 .thumbnail{
